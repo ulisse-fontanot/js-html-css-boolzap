@@ -1,0 +1,81 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  padding: 20px 0;
+}
+
+#app{
+  margin: auto;
+  width: 70vw;
+  height: 95vh;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: row;
+}
+
+/* WARNING: PARTE SINISTRA */
+.left{
+  width: 40%;
+  height: 100%;
+  border: 1px solid grey;
+}
+
+/* ZONA HEADER SINISTRO */
+.header-left{
+  width: 100%;
+  height: 10%;
+  background-color: red;
+}
+
+/* ZONA NOTIFICHE SINISTRO */
+.notify-left{
+  width: 100%;
+  height: 10%;
+  background-color: blue;
+}
+
+/* ZONA RICERCA SINISTRO */
+.search-left{
+  width: 100%;
+  height: 10%;
+  background-color: green;
+}
+
+/* ZONA CONTATTI SINISTRO */
+.contact-left{
+  width: 100%;
+  height: 70%;
+  background-color: yellow;
+}
+
+/* WARNING: PARTE DESTRA */
+.right{
+  width: 60%;
+  height: 100%;
+  border: 1px solid grey;
+}
+
+/* ZONA USER DESTRO */
+.user-left{
+  width: 100%;
+  height: 10%;
+  background-color: red;
+}
+
+/* ZONA CHAT DESTRO */
+.chat-left{
+  width: 100%;
+  height: 80%;
+  background-color: blue;
+}
+
+/* ZONA DIGITAZIONE DESTRO */
+.digit-left{
+  width: 100%;
+  height: 10%;
+  background-color: green;
+}
