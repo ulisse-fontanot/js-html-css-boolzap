@@ -53,9 +53,8 @@ body{
   background-color: lightgrey;
 }
 
-.header-left i{
+.header-left .icons{
   float: right;
-  padding-left: 20px;
 }
 
 /* ZONA NOTIFICHE SINISTRO */
