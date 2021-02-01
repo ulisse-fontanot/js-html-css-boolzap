@@ -4,15 +4,37 @@
   box-sizing: border-box;
 }
 
+/* WARNING: PER TUTTO */
+img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid green;
+  margin-right: 20px;
+}
+
+i{
+  font-size: 30px;
+  color: grey;
+}
+
+section > div{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+/* WARNING: PER TUTTO */
+
 body{
   padding: 20px 0;
+  background-color: lightgrey;
+  font-family: 'Roboto', sans-serif;
 }
 
 #app{
   margin: auto;
   width: 70vw;
   height: 95vh;
-  background-color: lightgreen;
   display: flex;
   flex-direction: row;
 }
@@ -28,21 +50,38 @@ body{
 .header-left{
   width: 100%;
   height: 10%;
-  background-color: red;
+  background-color: lightgrey;
+}
+
+.header-left i{
+  float: right;
+  padding-left: 20px;
 }
 
 /* ZONA NOTIFICHE SINISTRO */
 .notify-left{
   width: 100%;
   height: 10%;
-  background-color: blue;
+  background-color: lightblue;
+}
+
+.notify-left i{
+  padding-right: 20px;
 }
 
 /* ZONA RICERCA SINISTRO */
 .search-left{
   width: 100%;
   height: 10%;
-  background-color: green;
+  background-color: lightgrey;
+}
+
+.search-left input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  margin-left: 20px;
+  border-radius: 10px;
 }
 
 /* ZONA CONTATTI SINISTRO */
