@@ -18,10 +18,19 @@ i{
   color: grey;
 }
 
+i:hover{
+  color: darkblue;
+  cursor: pointer;
+}
+
+a, h4{
+  color: grey;
+}
+
 section > div{
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px;
 }
 /* WARNING: PER TUTTO */
 
@@ -49,18 +58,25 @@ body{
 /* ZONA HEADER SINISTRO */
 .header-left{
   width: 100%;
-  height: 10%;
+  height: 70px;
   background-color: lightgrey;
+  justify-content: space-between;
 }
 
-.header-left .icons{
-  float: right;
+.header-left .img{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-left .icons i{
+  padding-left: 20px;
 }
 
 /* ZONA NOTIFICHE SINISTRO */
 .notify-left{
   width: 100%;
-  height: 10%;
+  height: 70px;
   background-color: lightblue;
 }
 
@@ -71,7 +87,7 @@ body{
 /* ZONA RICERCA SINISTRO */
 .search-left{
   width: 100%;
-  height: 10%;
+  height: 60px;
   background-color: lightgrey;
 }
 
@@ -86,8 +102,15 @@ body{
 /* ZONA CONTATTI SINISTRO */
 .contact-left{
   width: 100%;
-  height: 70%;
-  background-color: yellow;
+  height: calc(100% - 200px);
+  background-color: lightgreen;
+  align-items: flex-start;
+  overflow-y: scroll;
+}
+
+.contact-left .contatto{
+  display: flex;
+  flex-direction: row;
 }
 
 /* WARNING: PARTE DESTRA */
@@ -100,20 +123,50 @@ body{
 /* ZONA USER DESTRO */
 .user-left{
   width: 100%;
-  height: 10%;
-  background-color: red;
+  height: 70px;
+  background-color: lightgrey;
+  justify-content: space-between;
+}
+
+.user-left .img{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-left .icons i{
+  padding-left: 20px;
 }
 
 /* ZONA CHAT DESTRO */
 .chat-left{
   width: 100%;
-  height: 80%;
-  background-color: blue;
+  height: calc(100% - 140px);
+  background-image: url("../img/space.jpg");
+  background-size: cover;
+  overflow-y: scroll;
 }
 
 /* ZONA DIGITAZIONE DESTRO */
 .digit-left{
   width: 100%;
-  height: 10%;
-  background-color: green;
+  height: 70px;
+  background-color: lightgrey;
+  justify-content: space-between;
+}
+
+.digit-left input{
+  height: 100%;
+  width: 100%;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.digit-left i.fa-paper-plane{
+  margin-right: 20px;
+  background-color: blue;
+  padding: 10px;
+  border-radius: 30%;
+  color: white;
 }
