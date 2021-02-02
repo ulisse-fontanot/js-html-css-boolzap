@@ -71,9 +71,6 @@ var app = new Vue({
       }
     ]
   },
-  created(){
-    this.intervallo = setTimeout(this.newSent, 2000);
-  },
   methods: {
     questo(index){
       this.counter = index;
@@ -88,7 +85,7 @@ var app = new Vue({
           </div>
         </div>
       `;
-      clearInterval(this.intervallo);
+      setTimeout( () => {
       document.getElementById('chat-right').innerHTML +=
       `
       <div class="rec">
@@ -98,6 +95,7 @@ var app = new Vue({
         </div>
       </div>
       `;
+    }, 2000);
     }
   }
 })
