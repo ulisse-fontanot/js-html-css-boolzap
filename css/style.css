@@ -193,7 +193,7 @@ body{
 
 .mess-sent{
   background-color: rgb(120, 240, 137);
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   color: black;
   position: relative;
@@ -206,6 +206,13 @@ body{
   right: 10px;
 }
 
+.mess-sent span{
+  font-size: 10px;
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}
+
 .rec{
   display: flex;
   justify-content: flex-start;
@@ -213,7 +220,7 @@ body{
 
 .mess-rec{
   background-color: white;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   color: black;
   position: relative;
@@ -224,6 +231,13 @@ body{
   position: absolute;
   bottom: -15px;
   left: 10px;
+}
+
+.mess-rec span{
+  font-size: 10px;
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
 }
 
 /* ZONA DIGITAZIONE DESTRO */

@@ -85,6 +85,7 @@ var app = new Vue({
           </div>
         </div>
       `;
+      document.getElementById('input').value = "";
       setTimeout( () => {
       document.getElementById('chat-right').innerHTML +=
       `

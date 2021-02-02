@@ -89,12 +89,14 @@
           <div class="mess-rec">
             <p>{{contatti[counter].mes[1].text}}</p>
             <i class="fas fa-caret-right"></i>
+            <span>{{contatti[counter].mes[1].data}}</span>
           </div>
         </div>
         <div class="sent">
           <div class="mess-sent">
             <p>{{contatti[counter].mes[0].text}}</p>
             <i class="fas fa-caret-left"></i>
+            <span>{{contatti[counter].mes[0].data}}</span>
           </div>
         </div>
       </div>
@@ -103,7 +105,7 @@
       <!-- DIGIT RIGHT -->
       <div class="digit-right">
         <i class="far fa-smile"></i>
-        <input type="text" placeholder="Scrivi un messaggio" v-model="nuovoMess">
+        <input id="input" type="text" placeholder="Scrivi un messaggio" v-model="nuovoMess" v-on:keyup.enter="newSent(nuovoMess)">
         <i class="fas fa-paper-plane" @click="newSent(nuovoMess)"></i>
         <i class="fas fa-microphone"></i>
       </div>
