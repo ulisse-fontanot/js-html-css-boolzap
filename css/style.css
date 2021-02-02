@@ -195,8 +195,15 @@ body{
   background-color: rgb(120, 240, 137);
   padding: 10px;
   border-radius: 5px;
-  width: 20%;
   color: black;
+  position: relative;
+}
+
+.mess-sent i{
+  color: rgb(120, 240, 137);
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
 }
 
 .rec{
@@ -205,11 +212,18 @@ body{
 }
 
 .mess-rec{
-  background-color: rgb(226, 235, 199);
+  background-color: white;
   padding: 10px;
   border-radius: 5px;
-  width: 20%;
   color: black;
+  position: relative;
+}
+
+.mess-rec i{
+  color: white;
+  position: absolute;
+  bottom: -15px;
+  left: 10px;
 }
 
 /* ZONA DIGITAZIONE DESTRO */

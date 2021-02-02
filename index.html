@@ -51,9 +51,12 @@
       <!-- CONTATTI LEFT -->
       <div class="contact-left">
         <ul>
-          <li v-for="(eroi, index) in contatti" class="contatti">
-            <img :src="src[index]">
-            <h2>{{eroi}}</h2>
+          <li v-for="(eroi, index) in contatti" class="contatti" @click="questo(index)" :title="index">
+            <img :src="contatti[index].src">
+            <div>
+              <h2>{{contatti[index].nome}}</h2>
+              <h4>{{"Ultimo accesso: " + contatti[index].mes[1].data}}</h4>
+            </div>
           </li>
         </ul>
       </div>
@@ -66,10 +69,10 @@
       <!-- USER RIGHT -->
       <div class="user-right">
         <div class="img">
-          <img src="img\darth.jpg" alt="darth">
+          <img :src="contatti[counter].src">
           <div class="utente">
-            <h2>Darth Vader</h2>
-            <h4>Ultimo accesso: </h4>
+            <h2>{{contatti[counter].nome}}</h2>
+            <!-- <h4>{{"Ultimo accesso: " + contatti[0].mes[mes.length].data}}</h4> -->
           </div>
         </div>
         <div class="icons">
@@ -84,12 +87,14 @@
       <div class="chat-right">
         <div class="rec">
           <div class="mess-rec">
-            <p>Sono tuo padre!</p>
+            <p>{{contatti[counter].mes[1].text}}</p>
+            <i class="fas fa-caret-right"></i>
           </div>
         </div>
         <div class="sent">
           <div class="mess-sent">
-            <p>Seee come no</p>
+            <p>{{contatti[counter].mes[0].text}}</p>
+            <i class="fas fa-caret-left"></i>
           </div>
         </div>
       </div>
@@ -98,8 +103,8 @@
       <!-- DIGIT RIGHT -->
       <div class="digit-right">
         <i class="far fa-smile"></i>
-        <input type="text" placeholder="Scrivi un messaggio">
-        <i class="fas fa-paper-plane"></i>
+        <input type="text" placeholder="Scrivi un messaggio" v-model="nuovoMess">
+        <i class="fas fa-paper-plane" @click="newSent(nuovoMess)"></i>
         <i class="fas fa-microphone"></i>
       </div>
       <!-- DIGIT RIGHT -->
