@@ -2,6 +2,7 @@ var app = new Vue({
   el: "#app",
   data:{
     counter: 0,
+    intervallo: "",
     nuovoMess: "",
     contatti:[
       {  // --------------------DARTH VADER-----
@@ -70,20 +71,33 @@ var app = new Vue({
       }
     ]
   },
+  created(){
+    this.intervallo = setTimeout(this.newSent, 2000);
+  },
   methods: {
     questo(index){
       this.counter = index;
-      console.log(this.counter);
     },
-    // newSent(text){ //PER AGGIUNGERE PERSONAGGIO
-    //   this.nuovoMess = text;
-    //   document.getElementsByClassName('chat-right').innerHTML +=
-    //   (`<div class="sent">
-    //     <div class="mess-sent">
-    //       <p>{{nuovoMess}}</p>
-    //       <i class="fas fa-caret-left"></i>
-    //     </div>
-    //   </div>`)
-    // }
+    newSent(nuovoMess){ //PER AGGIUNGERE PERSONAGGIO
+      document.getElementById('chat-right').innerHTML +=
+      `
+        <div class="sent">
+          <div class="mess-sent">
+            <p>${nuovoMess}</p>
+            <i class="fas fa-caret-left"></i>
+          </div>
+        </div>
+      `;
+      clearInterval(this.intervallo);
+      document.getElementById('chat-right').innerHTML +=
+      `
+      <div class="rec">
+        <div class="mess-rec">
+          <p>ok</p>
+          <i class="fas fa-caret-right"></i>
+        </div>
+      </div>
+      `;
+    }
   }
 })
