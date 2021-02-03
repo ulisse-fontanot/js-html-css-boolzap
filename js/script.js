@@ -4,9 +4,10 @@ var app = new Vue({
     counter: 0,
     intervallo: "",
     nuovoMess: "",
+    now: "",
     contatti:[
       {  // --------------------DARTH VADER-----
-        nome: "Dart Vader",
+        nome: "Darth Vader",
         src: "img/darth.jpg",
         mes: [
           {
@@ -75,28 +76,34 @@ var app = new Vue({
     questo(index){
       this.counter = index;
     },
-    newSent(nuovoMess){ //PER AGGIUNGERE PERSONAGGIO
+    newSent(nuovoMess, now){ //PER AGGIUNGERE PERSONAGGIO
       document.getElementById('chat-right').innerHTML +=
       `
         <div class="sent">
           <div class="mess-sent">
             <p>${nuovoMess}</p>
             <i class="fas fa-caret-left"></i>
+            <span>${now}</span>
           </div>
         </div>
       `;
       document.getElementById('input').value = "";
-      setTimeout( () => {
-      document.getElementById('chat-right').innerHTML +=
-      `
-      <div class="rec">
-        <div class="mess-rec">
-          <p>ok</p>
-          <i class="fas fa-caret-right"></i>
+      setTimeout( (now) => {
+        document.getElementById('chat-right').innerHTML +=
+        `
+        <div class="rec">
+          <div class="mess-rec">
+            <p>ok</p>
+            <i class="fas fa-caret-right"></i>
+            <span>${now}</span>
+          </div>
         </div>
-      </div>
-      `;
-    }, 2000);
+        `;
+      }, 2000);
+    },
+    adesso(now){
+      this.now = window.dayjs_locale_zh_cn;
+      console.log(this.now);
     }
   }
 })
