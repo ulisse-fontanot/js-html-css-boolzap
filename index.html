@@ -89,17 +89,17 @@
       <div id="chat-right" class="chat-right">
         <div v-for="(k,index) in contatti[counter].mes">
           <div class="rec">
-            <div v-if="contatti[counter].k[index].status == rec" class="mess-rec">
-              <p>{{contatti[counter].mes.text}}</p>
+            <div v-if="contatti[counter].k[index].status = rec" class="mess-rec">
+              <p>{{contatti[counter].mes[index].text}}</p>
               <i class="fas fa-caret-right"></i>
-              <span>{{contatti[counter].mes.data}}</span>
+              <span>{{contatti[counter].mes[index].data}}</span>
             </div>
           </div>
           <div class="sent">
-            <div v-if="contatti[counter].k[index].status == sent" class="mess-sent">
-              <p>{{contatti[counter].mes.text}}</p>
+            <div v-if="contatti[counter].k[index].status = sent" class="mess-sent">
+              <p>{{contatti[counter].mes[index].text}}</p>
               <i class="fas fa-caret-left"></i>
-              <span>{{contatti[counter].mes.data}}</span>
+              <span>{{contatti[counter].mes[index].data}}</span>
             </div>
           </div>
         </div>
