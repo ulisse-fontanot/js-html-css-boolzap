@@ -99,9 +99,9 @@ var app = new Vue({
     adesso(now){
       console.log(this.now);
     },
-    filtro(contatti, counter, ricerca) {
-      this.contatti.forEach((contatti, counter, ricerca) => {
-        (this.contatti[this.counter].nome.includes(this.ricerca)) ? this.contatti[this.counter].visible = false : '';
+    filtro() {
+      this.contatti.forEach((items, counter, ricerca) => {
+        (items.nome.includes(this.ricerca)) ? '' : items.visible = false;
       });
     }
   }

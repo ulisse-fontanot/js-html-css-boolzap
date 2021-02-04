@@ -45,7 +45,7 @@
       <!-- CERCA LEFT -->
       <div class="search-left">
         <i class="fas fa-search"></i>
-        <input id="filtro" type="text" v-model="ricerca" placeholder="Cerca o inizia una chat" onkeyup="filtro(contatti, counter, ricerca)">
+        <input id="filtro" type="text" v-model="ricerca" placeholder="Cerca o inizia una chat" v-on:keyup="filtro">
       </div>
       <!-- CERCA LEFT -->
 
