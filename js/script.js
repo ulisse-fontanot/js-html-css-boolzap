@@ -5,11 +5,12 @@ var app = new Vue({
     intervallo: "",
     nuovoMess: "",
     now: "",
-    d: "",
+    ricerca: "",
     contatti:[
       {  // --------------------DARTH VADER-----
         nome: "Darth Vader",
         src: "img/darth.jpg",
+        visible: true,
         mes: [
           {
             data: "12/3/1970 12:30",
@@ -26,6 +27,7 @@ var app = new Vue({
       { // --------------------YODA-----
         nome: "Yoda",
         src: "img/yoda.jpeg",
+        visible: true,
         mes: [
           {
             data: "12/3/1970 12:30",
@@ -42,6 +44,7 @@ var app = new Vue({
       { // --------------------CHEWBECA-----
         nome: "Chewbecca",
         src: "img/chewbe.png",
+        visible: true,
         mes: [
           {
             data: "12/3/1970 12:30",
@@ -58,6 +61,7 @@ var app = new Vue({
       {  // --------------------OBI WAN KENOBI-----
         nome: "Obi Wan Kenobi",
         src: "img/obi.jpg",
+        visible: true,
         mes: [
           {
             data: "12/3/1970 12:30",
@@ -83,7 +87,7 @@ var app = new Vue({
         text: this.nuovoMess,
         status: "sent"
       });
-      document.getElementById('input').value = "";
+      document.getElementById('input').value = '';
       setTimeout( (now, contatti, counter) => {
         this.contatti[this.counter].mes.push({
           data: '17:30',
@@ -93,12 +97,12 @@ var app = new Vue({
       }, 2000);
     },
     adesso(now){
-      d = new Date();
-      this.now = d.getHours();
       console.log(this.now);
     },
-    // elimina(contatti, index) {
-    //   this.contatti[this.counter].mes.splice(this.contatti[this.counter].mes[index], 1);
-    // }
+    filtro(contatti, counter, ricerca) {
+      this.contatti.forEach((contatti, counter, ricerca) => {
+        (this.contatti[this.counter].nome.includes(this.ricerca)) ? this.contatti[this.counter].visible = false : '';
+      });
+    }
   }
 })

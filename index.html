@@ -45,14 +45,14 @@
       <!-- CERCA LEFT -->
       <div class="search-left">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="Cerca o inizia una chat">
+        <input id="filtro" type="text" v-model="ricerca" placeholder="Cerca o inizia una chat" onkeyup="filtro(contatti, counter, ricerca)">
       </div>
       <!-- CERCA LEFT -->
 
       <!-- CONTATTI LEFT -->
       <div class="contact-left">
         <ul>
-          <li v-for="(eroi, index) in contatti" class="contatti" @click="questo(index)" :title="index" :class="(index == counter) ? 'selezionato' : '' ">
+          <li v-for="(eroi, index) in contatti" class="contatti" @click="questo(index)" v-if="contatti[index].visible == true" :title="index" :class="(index == counter) ? 'selezionato' : '' ">
             <img :src="contatti[index].src">
             <div>
               <h2>{{contatti[index].nome}}</h2>
@@ -92,7 +92,7 @@
             <div v-if="k.status == 'rec'" class="mess-rec">
               <p>{{contatti[counter].mes[index].text}}</p>
               <i class="fas fa-caret-right"></i>
-              <i class="fas fa-times" @click="elimina"></i>
+              <i class="fas fa-times"></i>
               <span>{{contatti[counter].mes[index].data}}</span>
             </div>
           </div>
