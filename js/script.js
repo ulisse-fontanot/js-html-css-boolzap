@@ -5,6 +5,7 @@ var app = new Vue({
     intervallo: "",
     nuovoMess: "",
     now: "",
+    d: "",
     contatti:[
       {  // --------------------DARTH VADER-----
         nome: "Darth Vader",
@@ -76,34 +77,28 @@ var app = new Vue({
     questo(index){
       this.counter = index;
     },
-    newSent(nuovoMess, now){ //PER AGGIUNGERE PERSONAGGIO
-      document.getElementById('chat-right').innerHTML +=
-      `
-        <div class="sent">
-          <div class="mess-sent">
-            <p>${nuovoMess}</p>
-            <i class="fas fa-caret-left"></i>
-            <span>${now}</span>
-          </div>
-        </div>
-      `;
+    newSent(nuovoMess, now, contatti, counter){ //PER AGGIUNGERE PERSONAGGIO
+      this.contatti[this.counter].mes.push({
+        data: '17:30',
+        text: this.nuovoMess,
+        status: "sent"
+      });
       document.getElementById('input').value = "";
-      setTimeout( (now) => {
-        document.getElementById('chat-right').innerHTML +=
-        `
-        <div class="rec">
-          <div class="mess-rec">
-            <p>ok</p>
-            <i class="fas fa-caret-right"></i>
-            <span>${now}</span>
-          </div>
-        </div>
-        `;
+      setTimeout( (now, contatti, counter) => {
+        this.contatti[this.counter].mes.push({
+          data: '17:30',
+          text: "ok",
+          status: "rec"
+        });
       }, 2000);
     },
     adesso(now){
-      this.now = window.dayjs_locale_zh_cn;
+      d = new Date();
+      this.now = d.getHours();
       console.log(this.now);
-    }
+    },
+    // elimina(contatti, index) {
+    //   this.contatti[this.counter].mes.splice(this.contatti[this.counter].mes[index], 1);
+    // }
   }
 })

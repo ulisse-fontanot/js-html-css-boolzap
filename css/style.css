@@ -198,6 +198,20 @@ body{
   padding: 10px 20px;
 }
 
+#chat-right div div div i.fa-times{
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: black;
+  font-size: 15px;
+}
+
+#chat-right div div div:hover i.fa-times{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .sent{
   display: flex;
   justify-content: flex-end;
