@@ -52,7 +52,7 @@
       <!-- CONTATTI LEFT -->
       <div class="contact-left">
         <ul>
-          <li v-for="(eroi, index) in contatti" class="contatti" @click="questo(index)" v-if="contatti[index].visible == true" :title="index" :class="(index == counter) ? 'selezionato' : '' ">
+          <li v-for="(eroi, index) in contatti" class="contatti" @click="questo(index)" v-if="eroi.visible == true" :title="index" :class="(index == counter) ? 'selezionato' : '' ">
             <img :src="contatti[index].src">
             <div>
               <h2>{{contatti[index].nome}}</h2>

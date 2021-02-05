@@ -6,6 +6,8 @@ var app = new Vue({
     nuovoMess: "",
     now: "",
     ricerca: "",
+    ricercaToUpper: "",
+    nomeToUpper: "",
     contatti:[
       {  // --------------------DARTH VADER-----
         nome: "Darth Vader",
@@ -100,8 +102,10 @@ var app = new Vue({
       console.log(this.now);
     },
     filtro() {
+      this.ricercaToUpper = this.ricerca.toUpperCase();
       this.contatti.forEach((items, counter, ricerca) => {
-        (items.nome.includes(this.ricerca)) ? '' : items.visible = false;
+        this.nomeToUpper = items.nome.toUpperCase();
+        (this.nomeToUpper.includes(this.ricercaToUpper)) ? items.visible = true : items.visible = false;
       });
     }
   }
