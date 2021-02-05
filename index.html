@@ -92,7 +92,11 @@
             <div v-if="k.status == 'rec'" class="mess-rec">
               <p>{{contatti[counter].mes[index].text}}</p>
               <i class="fas fa-caret-right"></i>
-              <i class="fas fa-times"></i>
+              <i class="fas fa-chevron-down" @click="attivaTendinaRec"></i>
+              <div id="tendinaRec" class="none">
+                <p>info messaggio</p>
+                <p>elimina messaggio</p>
+              </div>
               <span>{{contatti[counter].mes[index].data}}</span>
             </div>
           </div>
@@ -100,7 +104,11 @@
             <div v-if="k.status == 'sent'" class="mess-sent">
               <p>{{contatti[counter].mes[index].text}}</p>
               <i class="fas fa-caret-left"></i>
-              <i class="fas fa-times"></i>
+              <i class="fas fa-chevron-down" @click="attivaTendinaSent"></i>
+              <div id="tendinaSent" class="none">
+                <p>info messaggio</p>
+                <p>elimina messaggio</p>
+              </div>
               <span>{{contatti[counter].mes[index].data}}</span>
             </div>
           </div>

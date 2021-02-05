@@ -107,6 +107,12 @@ var app = new Vue({
         this.nomeToUpper = items.nome.toUpperCase();
         (this.nomeToUpper.includes(this.ricercaToUpper)) ? items.visible = true : items.visible = false;
       });
+    },
+    attivaTendinaRec(){
+      document.getElementById("tendinaRec").classList.toggle("flex");
+    },
+    attivaTendinaSent(){
+      document.getElementById("tendinaSent").classList.toggle("flex");
     }
   }
 })

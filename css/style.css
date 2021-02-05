@@ -40,6 +40,14 @@ section > div{
 input{
   padding-left: 10px;
 }
+
+.none{
+  display: none;
+}
+
+.flex{
+  display: flex;
+}
 /* WARNING: PER TUTTO */
 
 body{
@@ -198,7 +206,7 @@ body{
   padding: 10px 20px;
 }
 
-#chat-right div div div i.fa-times{
+#chat-right div div div i.fa-chevron-down{
   display: none;
   position: absolute;
   top: 5px;
@@ -207,9 +215,22 @@ body{
   font-size: 15px;
 }
 
-#chat-right div div div:hover i.fa-times{
+#chat-right div div div:hover i.fa-chevron-down{
   display: flex;
   flex-direction: row-reverse;
+}
+
+#tendinaSent, #tendinaRec{
+  position: absolute;
+  top: 20px;
+  right: -5px;
+  flex-direction: column;
+  background-color: blue;
+  color: white;
+  width: 120%;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2;
 }
 
 .sent{
