@@ -41,13 +41,6 @@ input{
   padding-left: 10px;
 }
 
-.none{
-  display: none;
-}
-
-.flex{
-  display: flex;
-}
 /* WARNING: PER TUTTO */
 
 body{
@@ -220,44 +213,38 @@ body{
   flex-direction: row-reverse;
 }
 
-#tendinaSent, #tendinaRec{
+#tendinaRec{
   position: absolute;
   top: 20px;
-  right: -5px;
+  left: 5px;
   flex-direction: column;
-  background-color: blue;
-  color: white;
-  width: 120%;
+  background-color: rgb(9, 23, 80);
+  color: lightgrey;
+  width: 200px;
   padding: 10px;
+  font-size: 20px;
   border-radius: 10px;
   z-index: 2;
 }
 
-.sent{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.mess-sent{
-  background-color: rgb(120, 240, 137);
-  padding: 15px;
-  border-radius: 5px;
-  color: black;
-  position: relative;
-}
-
-.mess-sent i{
-  color: rgb(120, 240, 137);
+#tendinaSent{
   position: absolute;
-  bottom: -15px;
-  right: 10px;
-}
-
-.mess-sent span{
-  font-size: 10px;
-  position: absolute;
-  bottom: 2px;
+  top: 20px;
   right: 5px;
+  flex-direction: column;
+  background-color: rgb(9, 23, 80);
+  color: lightgrey;
+  width: 200px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+#chat-right div div div div p:hover{
+  border-radius: 5px;
+  background-color: rgb(14, 34, 117);
+  cursor: pointer;
 }
 
 .rec{
@@ -287,6 +274,32 @@ body{
   right: 5px;
 }
 
+.sent{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mess-sent{
+  background-color: rgb(120, 240, 137);
+  padding: 15px;
+  border-radius: 5px;
+  color: black;
+  position: relative;
+}
+
+.mess-sent i{
+  color: rgb(120, 240, 137);
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+}
+
+.mess-sent span{
+  font-size: 10px;
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}
 /* ZONA DIGITAZIONE DESTRO */
 .digit-right{
   width: 100%;

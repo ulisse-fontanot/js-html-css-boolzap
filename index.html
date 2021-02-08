@@ -56,8 +56,8 @@
             <img :src="contatti[index].src">
             <div>
               <h2>{{contatti[index].nome}}</h2>
-              <h3>{{contatti[index].mes[1].text}}</h3>
-              <h4>{{contatti[index].mes[1].data}}</h4>
+              <h3>{{contatti[index].mes[0].text}}</h3>
+              <h4>{{contatti[index].mes[0].data}}</h4>
             </div>
           </li>
         </ul>
@@ -74,7 +74,7 @@
           <img :src="contatti[counter].src">
           <div class="utente">
             <h2>{{contatti[counter].nome}}</h2>
-            <span>{{contatti[counter].mes[1].data}}</span>
+            <span>{{contatti[counter].mes[0].data}}</span>
           </div>
         </div>
         <div class="icons">
@@ -92,10 +92,10 @@
             <div v-if="k.status == 'rec'" class="mess-rec">
               <p>{{contatti[counter].mes[index].text}}</p>
               <i class="fas fa-caret-right"></i>
-              <i class="fas fa-chevron-down" @click="attivaTendinaRec"></i>
-              <div id="tendinaRec" class="none">
+              <i class="fas fa-chevron-down" @click="attivaTendina(index)"></i>
+              <div v-if="tendina.index === index" id="tendinaRec">
                 <p>info messaggio</p>
-                <p>elimina messaggio</p>
+                <p @click="eliminaMes(index)">elimina messaggio</p>
               </div>
               <span>{{contatti[counter].mes[index].data}}</span>
             </div>
@@ -104,10 +104,10 @@
             <div v-if="k.status == 'sent'" class="mess-sent">
               <p>{{contatti[counter].mes[index].text}}</p>
               <i class="fas fa-caret-left"></i>
-              <i class="fas fa-chevron-down" @click="attivaTendinaSent"></i>
-              <div id="tendinaSent" class="none">
+              <i class="fas fa-chevron-down" @click="attivaTendina(index)"></i>
+              <div v-if="tendina.index === index" id="tendinaSent">
                 <p>info messaggio</p>
-                <p>elimina messaggio</p>
+                <p @click="eliminaMes(index)">elimina messaggio</p>
               </div>
               <span>{{contatti[counter].mes[index].data}}</span>
             </div>

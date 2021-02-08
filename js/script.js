@@ -8,6 +8,9 @@ var app = new Vue({
     ricerca: "",
     ricercaToUpper: "",
     nomeToUpper: "",
+    tendina: {
+      index: false
+    },
     contatti:[
       {  // --------------------DARTH VADER-----
         nome: "Darth Vader",
@@ -15,14 +18,14 @@ var app = new Vue({
         visible: true,
         mes: [
           {
-            data: "12/3/1970 12:30",
-            text: "See come no...",
-            status: "sent"
-          },
-          {
             data: "4/9/1972 21:45",
             text: "Sono tuo padre",
             status: "rec"
+          },
+          {
+            data: "12/3/1970 12:30",
+            text: "See come no...",
+            status: "sent"
           }
         ]
       },
@@ -32,14 +35,14 @@ var app = new Vue({
         visible: true,
         mes: [
           {
-            data: "12/3/1970 12:30",
-            text: "Scusa devo salvare Leila",
-            status: "sent"
-          },
-          {
             data: "4/9/1972 21:45",
             text: "Tu ad allenarti venire devi!!",
             status: "rec"
+          },
+          {
+            data: "12/3/1970 12:30",
+            text: "Scusa devo salvare Leila",
+            status: "sent"
           }
         ]
       },
@@ -49,14 +52,14 @@ var app = new Vue({
         visible: true,
         mes: [
           {
-            data: "12/3/1970 12:30",
-            text: "Si, lo so!!",
-            status: "sent"
-          },
-          {
             data: "4/9/1972 21:45",
             text: "AAAAAAAAAA",
             status: "rec"
+          },
+          {
+            data: "12/3/1970 12:30",
+            text: "Si, lo so!!",
+            status: "sent"
           }
         ]
       },
@@ -66,14 +69,14 @@ var app = new Vue({
         visible: true,
         mes: [
           {
-            data: "12/3/1970 12:30",
-            text: "Ci provo...",
-            status: "sent"
-          },
-          {
             data: "4/9/1972 21:45",
             text: "Usa la forza Luke!",
             status: "rec"
+          },
+          {
+            data: "12/3/1970 12:30",
+            text: "Ci provo...",
+            status: "sent"
           }
         ]
       }
@@ -89,7 +92,7 @@ var app = new Vue({
         text: this.nuovoMess,
         status: "sent"
       });
-      document.getElementById('input').value = '';
+      this.nuovoMess = '';
       setTimeout( (now, contatti, counter) => {
         this.contatti[this.counter].mes.push({
           data: '17:30',
@@ -108,11 +111,12 @@ var app = new Vue({
         (this.nomeToUpper.includes(this.ricercaToUpper)) ? items.visible = true : items.visible = false;
       });
     },
-    attivaTendinaRec(){
-      document.getElementById("tendinaRec").classList.toggle("flex");
+    attivaTendina(indice){
+      this.tendina.index = indice;
     },
-    attivaTendinaSent(){
-      document.getElementById("tendinaSent").classList.toggle("flex");
+    eliminaMes(indice){
+      this.contatti[this.counter].mes.splice(indice,1);
+      this.tendina.index = false;
     }
   }
 })
